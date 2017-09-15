@@ -62,6 +62,8 @@ public class ParseUpdateData implements ParseData {
 
 		Select select = JsqlParserHelper.getSelect(sqlParserInfo.getTable(), updateColumns, whereExpression);
 		String selectSqlString = select.toString();
+		// 查询数量限制
+		selectSqlString = mybatisInvocation.getDbDialect().getLimitSql(selectSqlString, mybatisInvocation.getMaxRowMonitor());
 		
 		List<ParameterMapping> selectParamMap = new ArrayList<>();
 		List<String> whereIdList =JsqlParserHelper.getWhereColumn(whereExpression);
