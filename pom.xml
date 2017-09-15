@@ -2,9 +2,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.github.changemonitor</groupId>
+	<groupId>com.github.clazz666</groupId>
 	<artifactId>changemonitor</artifactId>
 	<version>1.0.0</version>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -21,22 +25,43 @@
 		</dependency>
 	</dependencies>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	<developers>
+		<developer>
+			<name>sclu</name>
+			<email>since719@126.com</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>
+         scm:git:https://github.com/SequoiaDB/SequoiaDB.git
+      </connection>
+		<developerConnection>
+         scm:git:https://github.com/SequoiaDB/SequoiaDB.git
+      </developerConnection>
+		<url>https://github.com/SequoiaDB/SequoiaDB</url>
+		<tag>v1.12</tag>
+	</scm>
 
 	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>ReleaseRepository</name>
-			<url>http://maven.dev.sh.ctripcorp.com:8081/nexus/content/repositories/thirdparty/</url>
-		</repository>
 		<snapshotRepository>
-			<id>snapshots</id>
-			<name>SnapshotRepository</name>
-			<url>http://maven.dev.sh.ctripcorp.com:8081/nexus/content/repositories/thirdparty/</url>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
 	</distributionManagement>
+
+	
+
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
 
 	<build>
 		<plugins>
@@ -63,6 +88,14 @@
 				</executions>
 			</plugin>
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<aggregate>true</aggregate>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
