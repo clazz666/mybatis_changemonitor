@@ -1,4 +1,6 @@
 package com.github.changemonitor.parse;
+import java.util.concurrent.CopyOnWriteArrayList;
+
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.MappedStatement;
 
@@ -16,12 +18,14 @@ public class MybatisInvocation {
 	private Executor executor;
 	private AbstractDialect dbDialect;
 	private int maxRowMonitor;
+	private CopyOnWriteArrayList<String> whiteCopyList;
 	
 	public MybatisInvocation(Object[] args, 
 			MappedStatement mappedStatement, 
 			Object parameter, Executor executor,
 			AbstractDialect dbDialect,
-			int maxRowMonitor) {
+			int maxRowMonitor,
+			CopyOnWriteArrayList<String> whiteCopyList) {
 		super();
 		this.args = args;
 		this.mappedStatement = mappedStatement;
@@ -29,6 +33,7 @@ public class MybatisInvocation {
 		this.executor = executor;
 		this.dbDialect = dbDialect;
 		this.maxRowMonitor = maxRowMonitor;
+		this.setWhiteCopyList(whiteCopyList);
 	}
 	
 	public Object[] getArgs() {
@@ -69,6 +74,14 @@ public class MybatisInvocation {
 
 	public void setMaxRowMonitor(int maxRowMonitor) {
 		this.maxRowMonitor = maxRowMonitor;
+	}
+
+	public CopyOnWriteArrayList<String> getWhiteCopyList() {
+		return whiteCopyList;
+	}
+
+	public void setWhiteCopyList(CopyOnWriteArrayList<String> whiteCopyList) {
+		this.whiteCopyList = whiteCopyList;
 	}
 
 }

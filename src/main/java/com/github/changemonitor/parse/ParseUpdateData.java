@@ -18,6 +18,7 @@ import org.apache.ibatis.session.RowBounds;
 import com.github.changemonitor.domain.ChangeData;
 import com.github.changemonitor.domain.ChangeDataUtil;
 import com.github.changemonitor.enumerate.DBActionTypeEnum;
+import com.github.changemonitor.filter.FilterContext;
 import com.github.changemonitor.mybatis.MSUtils;
 import com.github.changemonitor.mybatis.MybatisParameterUtils;
 import com.github.changemonitor.sql.JsqlParserHelper;
@@ -38,6 +39,12 @@ public class ParseUpdateData implements ParseData {
 		String sql = boundSql.getSql();
 		
 		SqlParserInfo sqlParserInfo = new SqlParserInfo(sql, DBActionTypeEnum.UPDATE);
+		
+		//校验过滤
+		Boolean validateBoolean =  FilterContext.validate(sqlParserInfo.getTableName(), mybatisInvocation);
+		if(!validateBoolean){
+			return null;
+		}
 		
 		//获取要更新数据
 		ArrayList<HashMap<String, Object>> queryResults = queryWillUpdateDatas(mybatisInvocation,boundSql, sqlParserInfo);

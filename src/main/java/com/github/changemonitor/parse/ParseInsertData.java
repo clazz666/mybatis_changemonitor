@@ -10,6 +10,7 @@ import org.apache.ibatis.mapping.MappedStatement;
 import com.github.changemonitor.domain.ChangeData;
 import com.github.changemonitor.domain.ChangeDataUtil;
 import com.github.changemonitor.enumerate.DBActionTypeEnum;
+import com.github.changemonitor.filter.FilterContext;
 import com.github.changemonitor.mybatis.MybatisParameterUtils;
 import com.github.changemonitor.sql.SqlParserInfo;
 
@@ -26,6 +27,12 @@ public class ParseInsertData implements ParseData {
 		String sql = boundSql.getSql();
 		SqlParserInfo sqlParserInfo = new SqlParserInfo(sql, DBActionTypeEnum.INSERT);
 
+		//校验过滤
+		Boolean validateBoolean =  FilterContext.validate(sqlParserInfo.getTableName(), mybatisInvocation);
+		if(!validateBoolean){
+			return null;
+		}
+				
 		// 获取更新字段列表
 		Map<String, Object> updateDataMap = MybatisParameterUtils.getParameter(mappedStatement, boundSql, updateParameterObject);
 		

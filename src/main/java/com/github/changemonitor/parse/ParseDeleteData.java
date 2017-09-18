@@ -18,6 +18,7 @@ import org.apache.ibatis.session.RowBounds;
 import com.github.changemonitor.domain.ChangeData;
 import com.github.changemonitor.domain.ChangeDataUtil;
 import com.github.changemonitor.enumerate.DBActionTypeEnum;
+import com.github.changemonitor.filter.FilterContext;
 import com.github.changemonitor.mybatis.MSUtils;
 import com.github.changemonitor.sql.JsqlParserHelper;
 import com.github.changemonitor.sql.SqlParserInfo;
@@ -35,6 +36,12 @@ public class ParseDeleteData implements ParseData {
 		
 		SqlParserInfo sqlParserInfo = new SqlParserInfo(sql, DBActionTypeEnum.DELETE);
 
+		//校验过滤
+		Boolean validateBoolean =  FilterContext.validate(sqlParserInfo.getTableName(), mybatisInvocation);
+		if(!validateBoolean){
+			return null;
+		}
+				
 		// 获取要更新数据
 		ArrayList<HashMap<String, Object>> beforeRsults = queryWillUpdateDatas(mybatisInvocation, boundSql, sqlParserInfo);
 
