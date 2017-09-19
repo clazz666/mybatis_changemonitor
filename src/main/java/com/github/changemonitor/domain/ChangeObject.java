@@ -1,10 +1,6 @@
 package com.github.changemonitor.domain;
 
-/**
- * @author AlexLu
- * @version CreateDate：2017年4月20日 下午6:54:10
- * Class Description 
- */
+
 public class ChangeObject {
 	public String name ;
     public String value ;

@@ -12,12 +12,7 @@ public class MSUtils {
 	public static final String CUSTOMQUERY = "_CUSTOMQUERY";
     private static final List<ResultMapping> EMPTY_RESULTMAPPING = new ArrayList<>(0);
 
-    /**
-     * 新建query Hashmap查询的MappedStatement
-     *
-     * @param ms
-     * @return
-     */
+
     public static MappedStatement newHashMapMappedStatement(MappedStatement ms) {
         MappedStatement.Builder builder = new MappedStatement.Builder(ms.getConfiguration(), ms.getId() + CUSTOMQUERY, ms.getSqlSource(), ms.getSqlCommandType());
         builder.resource(ms.getResource());

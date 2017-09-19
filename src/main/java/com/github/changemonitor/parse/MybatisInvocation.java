@@ -6,11 +6,7 @@ import org.apache.ibatis.mapping.MappedStatement;
 
 import com.github.changemonitor.dialect.AbstractDialect;
 
-/**
- * @author AlexLu
- * @version CreateDate：2017年4月21日 上午10:19:41
- * Class Description 
- */
+
 public class MybatisInvocation {
 	private Object[] args ;
 	private MappedStatement mappedStatement;

@@ -1,10 +1,6 @@
 package com.github.changemonitor.enumerate;
 
-/**
- *
- * @author sclu
- * @date 2017年8月15日 下午6:32:52
- */
+
 public enum DBType {
 	MY_SQL("mysql","mysql"),
 	DB2("db2","db2"),

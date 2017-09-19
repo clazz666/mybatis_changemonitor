@@ -2,11 +2,7 @@ package com.github.changemonitor.domain;
 
 import java.util.List;
 
-/**
- * @author AlexLu
- * @version CreateDate：2017年4月20日 下午6:55:20
- * Class Description 
- */
+
 public class ChangeData {
 	public List<ChangeObject> afterColumnList ;
     public List<ChangeObject> beforeColumnList;

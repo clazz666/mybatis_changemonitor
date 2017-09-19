@@ -4,11 +4,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import com.github.changemonitor.parse.MybatisInvocation;
 
-/**
- *
- * @author sclu
- * @date 2017年9月18日 下午2:59:13
- */
+
 public class WhiteListFilter implements Filter{
 	@Override
 	public Boolean validate(String tableName, MybatisInvocation mybatisInvocation) {

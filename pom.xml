@@ -4,8 +4,13 @@
 
 	<groupId>com.github.clazz666</groupId>
 	<artifactId>changemonitor</artifactId>
-	<version>1.0.0</version>
-
+	<version>1.0.2</version>
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -27,45 +32,27 @@
 
 	<developers>
 		<developer>
-			<name>sclu</name>
+			<name>clazz666</name>
 			<email>since719@126.com</email>
 		</developer>
 	</developers>
-
-	<scm>
-		<connection>
-         scm:git:https://github.com/SequoiaDB/SequoiaDB.git
-      </connection>
-		<developerConnection>
-         scm:git:https://github.com/SequoiaDB/SequoiaDB.git
-      </developerConnection>
-		<url>https://github.com/SequoiaDB/SequoiaDB</url>
-		<tag>v1.12</tag>
-	</scm>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>Releases</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-		</snapshotRepository>
-		<repository>
-			<id>Snapshots</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
-		</repository>
-	</distributionManagement>
-
-	
-
 	<licenses>
 		<license>
-			<name>The Apache License, Version 2.0</name>
+			<name>The Apache Software License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
 		</license>
 	</licenses>
+	<scm>
+		<connection>scm:git:https://github.com/clazz666/mybatis_changemonitor.git</connection>
+		<developerConnection>scm:git:https://github.com/clazz666/mybatis_changemonitor.git</developerConnection>
+		<url>https://github.com/clazz666/mybatis_changemonitor.git</url>
+	</scm>
+
+
+
 
 	<build>
 		<plugins>
-			<!--Compiler -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -87,15 +74,36 @@
 					</execution>
 				</executions>
 			</plugin>
-
+			<!-- Javadoc -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.9.1</version>
-				<configuration>
-					<aggregate>true</aggregate>
-				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- GPG -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.5</version>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
+
+
 </project>

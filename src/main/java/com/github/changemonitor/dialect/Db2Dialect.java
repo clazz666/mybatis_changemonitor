@@ -1,10 +1,6 @@
 package com.github.changemonitor.dialect;
 
-/**
- *
- * @author sclu
- * @date 2017年8月15日 下午6:25:10
- */
+
 public class Db2Dialect  extends AbstractDialect {
 	@Override
 	public String getLimitSql(String sql, Integer limitSize) {

@@ -1,11 +1,6 @@
 package com.github.changemonitor.enumerate;
-import java.util.*;
 
-/**
- * @author AlexLu
- * @version CreateDate：2017年4月20日 下午6:51:32
- * Class Description 
- */
+
 public enum DBActionTypeEnum {
 	UPDATE("UPDATE","UPDATE"),
 	INSERT("INSERT","INSERT"),

@@ -23,10 +23,7 @@ import com.github.changemonitor.mybatis.MSUtils;
 import com.github.changemonitor.sql.JsqlParserHelper;
 import com.github.changemonitor.sql.SqlParserInfo;
 
-/**
- * @author AlexLu
- * @version CreateDate：2017年4月21日 上午10:08:17 Class Description
- */
+
 public class ParseDeleteData implements ParseData {
 	@Override
 	public List<ChangeData> parse(String commandName, MybatisInvocation mybatisInvocation) throws Throwable {

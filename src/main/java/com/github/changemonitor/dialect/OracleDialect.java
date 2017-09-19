@@ -1,10 +1,6 @@
 package com.github.changemonitor.dialect;
 
-/**
- *
- * @author sclu
- * @date 2017年8月15日 下午6:20:04
- */
+
 public class OracleDialect extends AbstractDialect {
 	@Override
 	public String getLimitSql(String sql, Integer limitSize) {

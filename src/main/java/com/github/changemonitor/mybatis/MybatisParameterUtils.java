@@ -12,11 +12,7 @@ import org.apache.ibatis.mapping.StatementType;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.session.Configuration;
 
-/**
- *
- * @author sclu
- * @date 2017年8月3日 下午5:08:12
- */
+
 public class MybatisParameterUtils {
 	public static Map<String, Object> getParameter(MappedStatement mappedStatement, BoundSql boundSql, Object updateParameterObject){
 		Configuration configuration = mappedStatement.getConfiguration();

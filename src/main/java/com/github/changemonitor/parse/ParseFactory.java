@@ -3,11 +3,7 @@ import java.util.*;
 
 import com.github.changemonitor.enumerate.DBActionTypeEnum;
 
-/**
- * @author AlexLu
- * @version CreateDate：2017年4月21日 上午10:05:02
- * Class Description 
- */
+
 public class ParseFactory {
 	private ParseFactory() {}
 	

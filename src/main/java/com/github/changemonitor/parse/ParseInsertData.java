@@ -14,10 +14,7 @@ import com.github.changemonitor.filter.FilterContext;
 import com.github.changemonitor.mybatis.MybatisParameterUtils;
 import com.github.changemonitor.sql.SqlParserInfo;
 
-/**
- * @author AlexLu
- * @version CreateDate：2017年4月21日 上午9:44:26 Class Description
- */
+
 public class ParseInsertData implements ParseData {
 	@Override
 	public List<ChangeData> parse(String commandName, MybatisInvocation mybatisInvocation) throws Throwable {

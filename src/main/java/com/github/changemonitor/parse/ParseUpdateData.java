@@ -24,10 +24,6 @@ import com.github.changemonitor.mybatis.MybatisParameterUtils;
 import com.github.changemonitor.sql.JsqlParserHelper;
 import com.github.changemonitor.sql.SqlParserInfo;
 
-/**
- * @author AlexLu
- * @version CreateDate：2017年4月21日 上午9:44:07 Class Description
- */
 public class ParseUpdateData implements ParseData {
 	
 	@Override
