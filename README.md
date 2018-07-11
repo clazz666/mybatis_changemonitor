@@ -1,3 +1,3 @@
 
 
-blog: https://github.com/clazz666/mybatis_changemonitor
+blog: https://blog.csdn.net/hanqiu613/article/details/78056665
